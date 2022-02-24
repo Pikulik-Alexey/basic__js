@@ -28,7 +28,13 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const enteringNumber = +prompt ('Введите пожалуйста число');
+  const units = enteringNumber % 10;
+  const tens = Math.trunc(enteringNumber / 10) % 10;
+  const hundreds = Math.trunc(enteringNumber / 100) % 10;
+
+  alert(`В числе ${enteringNumber} количество сотен: ${hundreds},  десятков: ${tens},  единиц: ${units}`);
+  // Решение подсмотрел 
 </script>
 </body>
 </html>
