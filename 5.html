@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,56 +31,80 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-     /**
+    /**
+     * Вычисляет операцию, переданную в третий параметр между двумя первыми
+     * аргументами функции.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
+     * @param {string} operation - которая содержит один символ из: "+", "-", "*", "/".
+     * @return {number} Функция mathOperation должна вернуть результат операции, который был передан в
+     * параметр operation для двух первых аргументов (arg1 и arg2)
+     */
+
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case "+":
+          return summation(arg1, arg2);
+        case "-":
+          return difference(arg1, arg2);
+        case "*":
+          return multiplication(arg1, arg2);
+        case "/":
+          return division(arg1, arg2);
+        default:
+          return NaN;
+      }
+    }
+
+    console.log(mathOperation(5, 3, "+"));
+    console.log(mathOperation(5, 3, "-"));
+    console.log(mathOperation(5, 3, "*"));
+    console.log(mathOperation(6, 3, "/"));
+    console.log(mathOperation(5, 3, "...."));
+
+    /**
      * Считает сумму чисел.
-     * @param {number} num1 - Первое число.
-     * @param {number} num2 - Второе число.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
      * @return {number} Сумма чисел.
      */
-     function summation(num1, num2) {
-      return num1 + num2;
+    function summation(arg1, arg2) {
+      return arg1 + arg2;
     }
-    const result = summation(2, 6);
-    console.log(result);
 
     /**
      * Считает разность чисел.
-     * @param {number} num3 - Первое число.
-     * @param {number} num4 - Второе число.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
      * @return {number} разность чисел.
      */
-    function difference(num3, num4) {
-      return num3 - num4;
+    function difference(arg1, arg2) {
+      return arg1 - arg2;
     }
-    const outcome = difference(2, 9);
-    console.log(outcome);
 
     /**
      * Считает произведение чисел.
-     * @param {number} num5 - Первое число.
-     * @param {number} num6 - Второе число.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
      * @return {number} произведение чисел.
      */
-    function multiplication(num5, num6) {
-      return num5 * num6;
+    function multiplication(arg1, arg2) {
+      return arg1 * arg2;
     }
-    const upshot = multiplication(0, 6);
-    console.log(upshot);
 
     /**
      * Считает частное чисел.
-     * @param {number} num7 - Первое число.
-     * @param {number} num8 - Второе число.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
      * @return {number} частное чисел.
      */
-    function division(num7, num8) {
-      return num7 / num8;
+    function division(arg1, arg2) {
+      return arg1 / arg2;
     }
-    const conclusion = division(10, 2);
-    console.log(conclusion);
-</script>
+  </script>
 </body>
+
 </html>
