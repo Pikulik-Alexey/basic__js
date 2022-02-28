@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо реализовать четыре функции, каждая функция должна принимать по два
@@ -28,10 +30,57 @@
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+     * Считает сумму чисел.
+     * @param {number} num1 - Первое число.
+     * @param {number} num2 - Второе число.
+     * @return {number} Сумма чисел.
+     */
+    function summation(num1, num2) {
+      return num1 + num2;
+    }
+    const result = summation(2, 6);
+    console.log(result);
+
+    /**
+     * Считает разность чисел.
+     * @param {number} num3 - Первое число.
+     * @param {number} num4 - Второе число.
+     * @return {number} разность чисел.
+     */
+    function difference(num3, num4) {
+      return num3 - num4;
+    }
+    const outcome = difference(2, 9);
+    console.log(outcome);
+
+    /**
+     * Считает произведение чисел.
+     * @param {number} num5 - Первое число.
+     * @param {number} num6 - Второе число.
+     * @return {number} произведение чисел.
+     */
+    function multiplication(num5, num6) {
+      return num5 * num6;
+    }
+    const upshot = multiplication(0, 6);
+    console.log(upshot);
+
+    /**
+     * Считает частное чисел.
+     * @param {number} num7 - Первое число.
+     * @param {number} num8 - Второе число.
+     * @return {number} частное чисел.
+     */
+    function division(num7, num8) {
+      return num7 / num8;
+    }
+    const conclusion = division(10, 2);
+    console.log(conclusion);
+  </script>
 </body>
+
 </html>

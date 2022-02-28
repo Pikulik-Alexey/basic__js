@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо попросить пользователя ввести два числа в переменные `a` и `b`.
@@ -18,10 +20,21 @@
 `a` и `b`.
 В остальных случаях программа не должна ничего выводить.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    const num1 = +prompt('Введите первое число');
+    const num2 = +prompt('Введите второе число');
+    if (num1 > 0 && num2 > 0) {
+      console.log('Разность чисел равна: ' + (num1 - num2));
+    } else if (num1 < 0 && num2 < 0) {
+      console.log('Произведение чисел равно: ' + (num1 * num2));
+    } else if (num1 > 0, num1 < 0, num2 > 0, num2 < 0) {
+      console.log('Сумма чисел равна: ' + (num1 + num2));
+    } else {
+      console.log('Неизвестное число !!!');
+    }
+  </script>
 </body>
+
 </html>
