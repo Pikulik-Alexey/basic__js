@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -47,10 +49,86 @@
 что-нибудь пропустить.
 4. Если непонятно условие - задайте вопрос.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    function PostES5(name, text) {
+      this.name = name;
+      this.text = text;
+      this.lastModifiedDate = new Date();
+    }
+
+    PostES5.prototype.edit = function (text) {
+      this.text = text;
+      this.lastModifiedDate = new Date();
+    }
+
+    const post = new PostES5('Алексей', 'трудное задание');
+    console.log(post);
+    post.edit('Очень трудно');
+    console.log(post);
+
+    // -------------------------------------------------------------------------
+
+    class PostES6 {
+      constructor(name, text) {
+        this.name = name;
+        this.text = text;
+        this.lastModifiedDate = new Date();
+      }
+      edit(text) {
+        this.text = text;
+        this.lastModifiedDate = new Date();
+      }
+    }
+
+    const post2 = new PostES6('Алексей', 'трудное задание');
+    console.log(post2);
+    post2.edit('Очень трудно');
+    console.log(post2);
+
+    // -------------------------------------------------------------------------
+
+    function AttachedPostES5(name, text) {
+      PostES5.call(this, name, text);
+      this.highlighted = false;
+    }
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this.lastModifiedDate = new Date();
+    };
+
+    const post3 = new AttachedPostES5('Алексей', 'без разбора домашнего \
+задания не обошлось');
+    console.log(post3);
+    post3.makeTextHighlighted();
+    post3.edit('оставлю без комментария');
+    console.log(post3);
+
+    // -------------------------------------------------------------------------
+
+    class AttachedPostES6 extends PostES6 {
+      constructor(name, text) {
+        super(name, text);
+        this.highlighted = false;
+      }
+
+      makeTextHighlighted = function () {
+        this.highlighted = true;
+        this.lastModifiedDate = new Date();
+      };
+    }
+
+    const post4 = new AttachedPostES5('Алексей', 'без разбора домашнего \
+задания не обошлось');
+    console.log(post4);
+    post4.makeTextHighlighted();
+    post4.edit('оставлю без комментария');
+    console.log(post4);
+  </script>
 </body>
+
 </html>
